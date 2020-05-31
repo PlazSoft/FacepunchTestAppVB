@@ -20,12 +20,14 @@ Public Class Form1
     End Sub
 
     Private Async Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
-        Dim previewLocation = "C:\Users\Jeff\Documents\Visual Studio 2017\Projects\StudyxMain\StudyxMain\TestUpload\icon-1719737_640.png"
+        'Process.Start("TestUpload\icon-1719737_640.png") 'verify the path exists
+        'Process.Start("TestUpload\") 'verify the path exists
+        Dim previewLocation = "\TestUpload\icon-1719737_640.png"
         publishReasult = Await Steamworks.Ugc.Editor.NewCommunityFile.WithTitle(
             "My New Item" & theRandom.Next).
             WithDescription("test").
             WithTag("StudyFile").
-            WithContent("C:\Users\Jeff\Documents\Visual Studio 2017\Projects\StudyxMain\StudyxMain\TestUpload").
+            WithContent("TestUpload\").
         SubmitAsync()
         '                WithPreviewFile(previewLocation).      
         MemoEdit1.Text = publishReasult.Result.ToString & vbCrLf
