@@ -33,4 +33,7 @@ Public Class Form1
         MemoEdit1.Text = publishReasult.Result.ToString & vbCrLf
     End Sub
 
+    Private Sub MemoEdit1_TextChanged(sender As Object, e As EventArgs) Handles MemoEdit1.TextChanged
+
+    End Sub
 End Class
