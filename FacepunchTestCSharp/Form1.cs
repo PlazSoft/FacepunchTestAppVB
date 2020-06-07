@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Steamworks.Ugc;
 
@@ -32,30 +33,24 @@ namespace FacepunchTestCSharp
             Steamworks.SteamClient.Shutdown();
         }
 
-        private async void btnUpload_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MemoEdit1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private async void btnUpload_Click_1(object sender, EventArgs e)
         {
-            //Process.Start(@"TestUpload\icon-1719737_640.png"); // verify the path exists
-            //Process.Start(@"TestUpload\"); // verify the path exists
-            string previewLocation = @"\TestUpload\icon-1719737_640.png";
+            string folderLocation = Application.StartupPath + @"\TestUpload\";
+            string previewLocation = Application.StartupPath + @"\TestUpload\icon-1719737_640.png";
+            Process.Start(previewLocation); // verify the path exists
+            Process.Start(folderLocation); // verify the path exists
+            
             publishReasult = await Steamworks.Ugc.Editor.NewCommunityFile
                 .WithTitle("My New Item" + theRandom.Next())
                 .WithDescription("test")
                 .WithTag("StudyFile")
-                .WithContent(@"TestUpload\")
+                .WithContent(folderLocation)   //If you comment out this line it works. So it must be something related to the content.
+                //.WithPreviewFile(previewLocation)    //Even if you comment out this line it still has issues.
                 .SubmitAsync();
-            // WithPreviewFile(previewLocation).      
             MemoEdit1.Text = publishReasult.Result.ToString() + "\n";
-            
+
+            Process.Start(@"steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=" + publishReasult.FileId.ToString()); //Opens the item on steam
+
         }
     }
 }
