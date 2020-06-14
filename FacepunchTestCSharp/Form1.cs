@@ -35,7 +35,7 @@ namespace FacepunchTestCSharp
 
         private async void btnUpload_Click_1(object sender, EventArgs e)
         {
-            string folderLocation = Application.StartupPath + @"\TestUpload\";
+            string folderLocation =   Application.StartupPath +  @"\TestUpload\"; //@"C:\ProgramData\StudyX\";
             string previewLocation = Application.StartupPath + @"\TestUpload\icon-1719737_640.png";
             //Process.Start(previewLocation); // verify the path exists
             //Process.Start(folderLocation); // verify the path exists
