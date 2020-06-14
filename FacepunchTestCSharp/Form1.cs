@@ -37,15 +37,15 @@ namespace FacepunchTestCSharp
         {
             string folderLocation = Application.StartupPath + @"\TestUpload\";
             string previewLocation = Application.StartupPath + @"\TestUpload\icon-1719737_640.png";
-            Process.Start(previewLocation); // verify the path exists
-            Process.Start(folderLocation); // verify the path exists
+            //Process.Start(previewLocation); // verify the path exists
+            //Process.Start(folderLocation); // verify the path exists
             
             publishReasult = await Steamworks.Ugc.Editor.NewCommunityFile
-                .WithTitle("My New Item" + theRandom.Next())
+                .WithTitle("My New Item " + theRandom.Next())
                 .WithDescription("test")
                 .WithTag("StudyFile")
                 .WithContent(folderLocation)   //If you comment out this line it works. So it must be something related to the content.
-                //.WithPreviewFile(previewLocation)    //Even if you comment out this line it still has issues.
+                .WithPreviewFile(previewLocation)    //Even if you comment out this line it still has issues.
                 .SubmitAsync();
             MemoEdit1.Text = publishReasult.Result.ToString() + "\n";
 

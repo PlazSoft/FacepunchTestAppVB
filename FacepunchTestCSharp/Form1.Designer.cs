@@ -47,7 +47,7 @@
             this.MemoEdit1.Name = "MemoEdit1";
             this.MemoEdit1.Size = new System.Drawing.Size(800, 314);
             this.MemoEdit1.TabIndex = 3;
-            this.MemoEdit1.TextChanged += new System.EventHandler(this.MemoEdit1_TextChanged);
+            //this.MemoEdit1.TextChanged += new System.EventHandler(this.MemoEdit1_TextChanged);
             // 
             // btnUpload
             // 
