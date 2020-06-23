@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Steamworks.Data;
 using Steamworks.Ugc;
 
 
@@ -51,6 +52,11 @@ namespace FacepunchTestCSharp
 
             Process.Start(@"steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=" + publishReasult.FileId.ToString()); //Opens the item on steam
 
+        }
+
+        private void btnGetSubscribedWorkshop_Click(object sender, EventArgs e)
+        {
+            //var q = Ugc.Query.Screenshots.CreatedByFriends();
         }
     }
 }
