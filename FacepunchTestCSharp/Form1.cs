@@ -54,9 +54,36 @@ namespace FacepunchTestCSharp
 
         }
 
-        private void btnGetSubscribedWorkshop_Click(object sender, EventArgs e)
+         private  async void  btnGetSubscribedWorkshop_Click(object sender, EventArgs e)
         {
-            //var q = Ugc.Query.Screenshots.CreatedByFriends();
+            var q = Query.All
+                                .WithTag("StudyFile")
+                                .MatchAllTags(); //.MatchAnyTag();
+
+            var result = await q.GetPageAsync(1);
+
+            Console.WriteLine($"ResultCount: {result?.ResultCount}");
+            Console.WriteLine($"TotalCount: {result?.TotalCount}");
+
+            foreach (Item entry in result.Value.Entries)
+            {
+                Console.WriteLine($" {entry.Title}");
+            }
+
+            
+        }
+
+        private async void btnGetWorkshopItemInfo_Click(object sender, EventArgs e)
+        {
+            //var itemInfo = await Item.Get(2134710276);
+
+            //Console.WriteLine($"Title: {itemInfo?.Title}");
+            //Console.WriteLine($"IsInstalled: {itemInfo?.IsInstalled}");
+            //Console.WriteLine($"IsDownloading: {itemInfo?.IsDownloading}");
+            //Console.WriteLine($"IsDownloadPending: {itemInfo?.IsDownloadPending}");
+            //Console.WriteLine($"IsSubscribed: {itemInfo?.IsSubscribed}");
+            //Console.WriteLine($"NeedsUpdate: {itemInfo?.NeedsUpdate}");
+            //Console.WriteLine($"Description: {itemInfo?.Description}");
         }
     }
 }

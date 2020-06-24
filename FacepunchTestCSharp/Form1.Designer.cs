@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MemoEdit1 = new System.Windows.Forms.TextBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnGetSubscribedWorkshop = new System.Windows.Forms.Button();
+            this.btnGetWorkshopItemInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -68,11 +70,22 @@
             this.btnGetSubscribedWorkshop.UseVisualStyleBackColor = true;
             this.btnGetSubscribedWorkshop.Click += new System.EventHandler(this.btnGetSubscribedWorkshop_Click);
             // 
+            // btnGetWorkshopItemInfo
+            // 
+            this.btnGetWorkshopItemInfo.Location = new System.Drawing.Point(353, 12);
+            this.btnGetWorkshopItemInfo.Name = "btnGetWorkshopItemInfo";
+            this.btnGetWorkshopItemInfo.Size = new System.Drawing.Size(75, 48);
+            this.btnGetWorkshopItemInfo.TabIndex = 5;
+            this.btnGetWorkshopItemInfo.Text = "Get Workshop Item Info";
+            this.btnGetWorkshopItemInfo.UseVisualStyleBackColor = true;
+            this.btnGetWorkshopItemInfo.Click += new System.EventHandler(this.btnGetWorkshopItemInfo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGetWorkshopItemInfo);
             this.Controls.Add(this.btnGetSubscribedWorkshop);
             this.Controls.Add(this.MemoEdit1);
             this.Controls.Add(this.btnUpload);
@@ -90,6 +103,7 @@
         internal System.Windows.Forms.TextBox MemoEdit1;
         internal System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnGetSubscribedWorkshop;
+        private System.Windows.Forms.Button btnGetWorkshopItemInfo;
     }
 }
 
