@@ -75,15 +75,15 @@ namespace FacepunchTestCSharp
 
         private async void btnGetWorkshopItemInfo_Click(object sender, EventArgs e)
         {
-            //var itemInfo = await Item.Get(2134710276);
+            var itemInfo = await Item.GetAsync(2134710276);
 
-            //Console.WriteLine($"Title: {itemInfo?.Title}");
-            //Console.WriteLine($"IsInstalled: {itemInfo?.IsInstalled}");
-            //Console.WriteLine($"IsDownloading: {itemInfo?.IsDownloading}");
-            //Console.WriteLine($"IsDownloadPending: {itemInfo?.IsDownloadPending}");
-            //Console.WriteLine($"IsSubscribed: {itemInfo?.IsSubscribed}");
-            //Console.WriteLine($"NeedsUpdate: {itemInfo?.NeedsUpdate}");
-            //Console.WriteLine($"Description: {itemInfo?.Description}");
+            Console.WriteLine($"Title: {itemInfo?.Title}");
+            Console.WriteLine($"IsInstalled: {itemInfo?.IsInstalled}");
+            Console.WriteLine($"IsDownloading: {itemInfo?.IsDownloading}");
+            Console.WriteLine($"IsDownloadPending: {itemInfo?.IsDownloadPending}");
+            Console.WriteLine($"IsSubscribed: {itemInfo?.IsSubscribed}");
+            Console.WriteLine($"NeedsUpdate: {itemInfo?.NeedsUpdate}");
+            Console.WriteLine($"Description: {itemInfo?.Description}");
         }
     }
 }
