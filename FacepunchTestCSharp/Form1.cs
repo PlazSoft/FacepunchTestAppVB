@@ -62,12 +62,15 @@ namespace FacepunchTestCSharp
 
             var result = await q.GetPageAsync(1);
 
-            Console.WriteLine($"ResultCount: {result?.ResultCount}");
-            Console.WriteLine($"TotalCount: {result?.TotalCount}");
+            MemoEdit1.Text +=($"ResultCount: {result?.ResultCount}\r\n");
+            MemoEdit1.Text += ($"TotalCount: {result?.TotalCount}\r\n");
 
+            long iterationNum = 0;
             foreach (Item entry in result.Value.Entries)
             {
-                Console.WriteLine($" {entry.Title}");
+                iterationNum++;
+                MemoEdit1.Text += ($"   " + iterationNum + $". {entry.Title}\r\n");
+                
             }
 
             
@@ -77,13 +80,13 @@ namespace FacepunchTestCSharp
         {
             var itemInfo = await Item.GetAsync(2134710276);
 
-            Console.WriteLine($"Title: {itemInfo?.Title}");
-            Console.WriteLine($"IsInstalled: {itemInfo?.IsInstalled}");
-            Console.WriteLine($"IsDownloading: {itemInfo?.IsDownloading}");
-            Console.WriteLine($"IsDownloadPending: {itemInfo?.IsDownloadPending}");
-            Console.WriteLine($"IsSubscribed: {itemInfo?.IsSubscribed}");
-            Console.WriteLine($"NeedsUpdate: {itemInfo?.NeedsUpdate}");
-            Console.WriteLine($"Description: {itemInfo?.Description}");
+            MemoEdit1.Text += ($"Title: {itemInfo?.Title}\r\n");
+            MemoEdit1.Text += ($"IsInstalled: {itemInfo?.IsInstalled}\r\n");
+            MemoEdit1.Text += ($"IsDownloading: {itemInfo?.IsDownloading}\r\n");
+            MemoEdit1.Text += ($"IsDownloadPending: {itemInfo?.IsDownloadPending}\r\n");
+            MemoEdit1.Text += ($"IsSubscribed: {itemInfo?.IsSubscribed}\r\n");
+            MemoEdit1.Text += ($"NeedsUpdate: {itemInfo?.NeedsUpdate}\r\n");
+            MemoEdit1.Text += ($"Description: {itemInfo?.Description}\r\n");
         }
     }
 }
