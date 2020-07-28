@@ -47,6 +47,7 @@
             this.MemoEdit1.Location = new System.Drawing.Point(0, 136);
             this.MemoEdit1.Multiline = true;
             this.MemoEdit1.Name = "MemoEdit1";
+            this.MemoEdit1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.MemoEdit1.Size = new System.Drawing.Size(800, 314);
             this.MemoEdit1.TabIndex = 3;
             // 

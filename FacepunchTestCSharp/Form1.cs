@@ -69,7 +69,7 @@ namespace FacepunchTestCSharp
             foreach (Item entry in result.Value.Entries)
             {
                 iterationNum++;
-                MemoEdit1.Text += ($"   " + iterationNum + $". {entry.Title}\r\n");
+                MemoEdit1.Text += ($"   " + iterationNum + $". {entry.Title}    {entry.Id}\r\n");
                 
             }
 
