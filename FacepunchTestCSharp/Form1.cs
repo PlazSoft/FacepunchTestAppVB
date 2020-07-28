@@ -74,9 +74,10 @@ namespace FacepunchTestCSharp
                 var itemInfo = await Item.GetAsync(entry.Id);
 
                 //TODO: Add code to download item here::::::::::::::::::
-                
+
                 //Steamworks.Ugc.DownloadItem(entry.Id); //specify the publishedFileID
                 //Item.download(entry.Id); //Or maybe something like this?
+                Steamworks.SteamUGC.Download(entry.Id);
 
             }
 
