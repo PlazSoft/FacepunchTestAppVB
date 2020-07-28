@@ -56,11 +56,11 @@ namespace FacepunchTestCSharp
 
          private  async void  btnGetSubscribedWorkshop_Click(object sender, EventArgs e)
         {
-            var q = Query.All
+            Query q = Query.All
                                 .WithTag("StudyFile")
                                 .MatchAllTags(); //.MatchAnyTag();
 
-            var result = await q.GetPageAsync(1);
+            ResultPage? result = await q.GetPageAsync(1);
 
             MemoEdit1.Text +=($"ResultCount: {result?.ResultCount}\r\n");
             MemoEdit1.Text += ($"TotalCount: {result?.TotalCount}\r\n");
@@ -71,6 +71,13 @@ namespace FacepunchTestCSharp
                 iterationNum++;
                 MemoEdit1.Text += ($"   " + iterationNum + $". {entry.Title}    {entry.Id}\r\n");
                 
+                var itemInfo = await Item.GetAsync(entry.Id);
+
+                //TODO: Add code to download item here::::::::::::::::::
+                
+                //Steamworks.Ugc.DownloadItem(entry.Id); //specify the publishedFileID
+                //Item.download(entry.Id); //Or maybe something like this?
+
             }
 
             
