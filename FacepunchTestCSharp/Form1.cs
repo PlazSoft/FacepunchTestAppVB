@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Steamworks;
 using Steamworks.Data;
 using Steamworks.Ugc;
 
@@ -11,9 +12,16 @@ namespace FacepunchTestCSharp
     {
         private PublishResult publishReasult;
         private Random theRandom = new Random();
+
         public Form1()
         {
             InitializeComponent();
+            Steamworks.SteamUGC.OnDownloadItemResult += updateDownloadedItems;
+        }
+
+        private void updateDownloadedItems(Steamworks.Result steamResult)
+        {
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,6 +41,8 @@ namespace FacepunchTestCSharp
         {
             Steamworks.SteamClient.Shutdown();
         }
+
+
 
         private async void btnUpload_Click_1(object sender, EventArgs e)
         {
@@ -78,6 +88,7 @@ namespace FacepunchTestCSharp
                 //Steamworks.Ugc.DownloadItem(entry.Id); //specify the publishedFileID
                 //Item.download(entry.Id); //Or maybe something like this?
                 Steamworks.SteamUGC.Download(entry.Id);
+                
 
             }
 
